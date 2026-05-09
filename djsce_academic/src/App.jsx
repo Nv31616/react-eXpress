@@ -3,7 +3,6 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-import "../components/Navbar.jsx";
 import Navbar from "../components/Navbar.jsx";
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Library from "../components/Library.jsx";

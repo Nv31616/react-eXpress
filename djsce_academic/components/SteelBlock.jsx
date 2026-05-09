@@ -1,14 +1,22 @@
-import React from "react";
+import { useState } from "react";
+import HoverCard from "./HoverCard";
 
 const SteelBlock = (props) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const type = "wdn";
   const number = props.number;
   const side = props.side;
+  const alignment = "left-0";
   return (
-    <div className="col-span-1 -mt-8 mb-24 flex h-32 overflow-hidden rounded border-2  border-r bg-linear-to-r from-slate-400 via-slate-300 to-slate-400">
-      <div className="flex w-1/2 rotate-180 items-center justify-center border-r bg-linear-to-r from-slate-400 via-slate-300 to-slate-400 text-[8px] font-bold [writing-mode:vertical-lr]">
-      </div>
-      <div className="flex w-1/2 rotate-180 items-center justify-center text-[8px] font-bold [writing-mode:vertical-lr]">
-      </div>
+    <div
+      className="relative hover:scale-105 cursor-pointer flex flex-col w-1/2 font-mono items-center justify-center border-2 bg-linear-to-r from-slate-400 via-slate-300  to-slate-400 font-bold"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {`${side}`}
+      <br/>
+      {`${number}`}
+      {/* {isHovered && <HoverCard alignment={alignment} />} */}
     </div>
   );
 };
