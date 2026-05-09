@@ -6,21 +6,30 @@ import "./App.css";
 import "../components/Navbar.jsx";
 import Navbar from "../components/Navbar.jsx";
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Library from "../components/Library.jsx";
+import TermTest from "../components/TermTest.jsx";
+import Syllabus from "../components/Syllabus.jsx";
 
 function App() {
 	const router = createBrowserRouter([
 		{
 			path:"/",
-			element: <Home/> //Component
+			element: <Library/> //Component
 		},
-		{
-			path:"/login",
-			element: <Login/> //Component
+    {
+			path:"/TermTest",
+			element: <TermTest/> //Component
 		},
+    {
+			path:"/Syllabus",
+			element: <Syllabus/> //Component
+		},
+
 	])
   return (
     <>
       <Navbar />
+      <RouterProvider router={router} />
     </>
   );
 }
