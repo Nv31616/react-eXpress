@@ -29,7 +29,7 @@ const Library = () => {
     <LibraryContext.Provider value={{ highlightedId, setHighlightedId }}>
       <div className="flex justify-between">
         <SearchCard />
-        <div className="relative ml-auto mr-10 my-5 w-2/3">
+        <div className="relative ml-auto mr-10 my-5 w-2/3 ">
           <div
             className="absolute inset-0 z-0 grid"
             style={{
@@ -151,8 +151,8 @@ const Library = () => {
 
             <div className="col-span-3" />
             <div className="col-span-1 -mt-8 mb-24 flex h-32">
-              <SteelBlock id="stl-f-5" side="F" number="5" ref={(el) => (rackRefs.current["F-5"] = el)}/>
-              <SteelBlock id="stl-b-6" side="B" number="5" ref={(el) => (rackRefs.current["b-5"] = el)}/>
+              <SteelBlock id="stl-f-5" side="F" number="5" ref={(el) => (rackRefs.current["stl-f-5"] = el)}/>
+              <SteelBlock id="stl-b-6" side="B" number="5" ref={(el) => (rackRefs.current["stl-b-5"] = el)}/>
             </div>
 
             <div className="col-span-1" />
@@ -191,7 +191,7 @@ const Library = () => {
                 <WoodenRack id="wdn-lh-2" side="LH" number="2" ref={(el) => (rackRefs.current["wdn-lh-2"] = el)}/>
               </div>
               <Computers />
-              <WoodenRack od="wdn-lh-1" side="LH" number="1" ref={(el) => (rackRefs.current["wdn-lh-1"] = el)}/>
+              <WoodenRack id="wdn-lh-1" side="LH" number="1" ref={(el) => (rackRefs.current["wdn-lh-1"] = el)}/>
             </div>
             <div className="col-span-1" />
             <div className="col-span-1 -mt-8 mb-24 flex h-32">
