@@ -6,8 +6,8 @@ import { useContext } from "react";
 
 const SearchCard = () => {
   const [query, setQuery] = useState("");
-  const {books} = useContext(LibraryContext);
-  const {setBooks} = useContext(LibraryContext);
+  const { books } = useContext(LibraryContext);
+  const { setBooks } = useContext(LibraryContext);
   const [loading, setLoading] = useState(false);
   const { setHighlightedId } = useContext(LibraryContext);
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,6 +21,10 @@ const SearchCard = () => {
   // 2. Calculate total pages
   const totalPages = Math.ceil(books.length / itemsPerPage);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
   // SearchCard.jsx
   useEffect(() => {
     // 1. Don't search if the query is empty
@@ -32,9 +36,7 @@ const SearchCard = () => {
     const performSearch = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `/api/search/?q=${query}`,
-        );
+        const response = await fetch(`/api/search/?q=${query}`);
         const data = await response.json();
         setBooks(data.books);
       } catch (error) {
@@ -51,7 +53,7 @@ const SearchCard = () => {
 
     // 3. Cleanup the timer if the user types again
     return () => clearTimeout(timeoutId);
-  }, [query,]); // Re-run when query changes
+  }, [query]); // Re-run when query changes
 
   return (
     <div className="w-1/3 bg-[#dbc397] my-3 ml-2 mr-3 rounded-2xl p-6 flex flex-col border-amber-900 border-2">
