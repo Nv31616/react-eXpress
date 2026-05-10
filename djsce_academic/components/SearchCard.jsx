@@ -6,7 +6,8 @@ import { useContext } from "react";
 
 const SearchCard = () => {
   const [query, setQuery] = useState("");
-  const [books, setBooks] = useState([]);
+  const {books} = useContext(LibraryContext);
+  const {setBooks} = useContext(LibraryContext);
   const [loading, setLoading] = useState(false);
   const { setHighlightedId } = useContext(LibraryContext);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,10 +33,10 @@ const SearchCard = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/search/?q=${query}`,
+          `/api/search/?q=${query}`,
         );
         const data = await response.json();
-        setBooks(data.books || []);
+        setBooks(data.books);
       } catch (error) {
         console.error("Search failed:", error);
       } finally {
@@ -50,7 +51,7 @@ const SearchCard = () => {
 
     // 3. Cleanup the timer if the user types again
     return () => clearTimeout(timeoutId);
-  }, [query]); // Re-run when query changes
+  }, [query,]); // Re-run when query changes
 
   return (
     <div className="w-1/3 bg-[#dbc397] my-3 ml-2 mr-3 rounded-2xl p-6 flex flex-col border-amber-900 border-2">
