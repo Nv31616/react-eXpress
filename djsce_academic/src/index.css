@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
-@theme {
-  --color-omnitrix-black: #222222;
-  --color-omnitrix-dark: #328336;
-  --color-omnitrix-green: #3bff00;
-  --color-omnitrix-lime: #b2e05b;
-  --color-omnitrix-white: #fbfbfd;
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #94a3b8;
 }

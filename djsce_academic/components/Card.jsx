@@ -1,6 +1,6 @@
 import React from 'react'
 
-const hoverCard = (props) => {
+const Card = (props) => {
   return (
     <div className={`
         pointer-events-none

@@ -1,13 +1,14 @@
 import React from "react";
+import Button from "./Button";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between gap-x-4 h-20 sticky top-0 z-50 bg-black px-4 text-omnitrix-white">
-      <img src="../src/assets/omnitrix.jpg" className="h-16 w-auto"/>
+    <div className="flex group items-center justify-between gap-x-4 h-20 sticky top-0 z-50 bg-slate-900 px-4 text-omnitrix-white">
+      <img src="../src/assets/PowerWatch.svg" className="h-16 w-auto group-hover:animate-spin"/>
       <h2 className="text-5xl font-mono">DJSCE Academic</h2>
-      <button className="hover:scale-105 cursor-pointer bg-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white">Library</button>
-      <button className="hover:scale-105 cursor-pointer bg-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white" >Term Test</button>
-      <button className="hover:scale-105 cursor-pointer bg-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white" >Syllabus</button>
+      <Button text="Library"/>
+      <Button text="Term Test"/>
+      <Button text="Syllabus"/>
     </div>
   );
 };
