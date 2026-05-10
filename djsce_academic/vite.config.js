@@ -1,5 +1,5 @@
-import tailwindcss from '@tailwindcss/postcss' 
-import { defineConfig } from 'vite'
+import tailwindcss from "@tailwindcss/postcss";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   css: {
@@ -7,4 +7,9 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-})
+  server: {
+    proxy: {
+      "/api": "http://127.0.0.1:8000",
+    },
+  },
+});
