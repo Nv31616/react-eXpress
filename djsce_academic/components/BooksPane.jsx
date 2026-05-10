@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import BookCard from "./BookCard";
 import { useState } from "react";
 import LibraryContext from "../src/LibraryContext";
 import { useContext } from "react";
 
-const SearchCard = () => {
+const BooksPane = () => {
   const [query, setQuery] = useState("");
   const { books } = useContext(LibraryContext);
   const { setBooks } = useContext(LibraryContext);
@@ -114,4 +113,4 @@ const SearchCard = () => {
   );
 };
 
-export default SearchCard;
+export default BooksPane;

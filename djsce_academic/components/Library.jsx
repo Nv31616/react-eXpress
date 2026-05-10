@@ -2,7 +2,7 @@ import React from "react";
 import SteelBlock from "./SteelBlock";
 import Computers from "./Computers";
 import WoodenRack from "./WoodenRack";
-import SearchCard from "./SearchCard";
+import BooksPane from "./BooksPane";
 import { useState } from "react";
 import { createContext } from "react";
 import LibraryContext from "../src/LibraryContext";
@@ -30,7 +30,7 @@ const Library = () => {
   return (
     <LibraryContext.Provider value={{ highlightedId, setHighlightedId,books, setBooks,currentPage,setCurrentPage }}>
       <div className="flex justify-between">
-        <SearchCard />
+        <BooksPane />
         <div className="relative ml-auto mr-10 my-5 w-2/3 ">
           <div
             className="absolute inset-0 z-0 grid"
