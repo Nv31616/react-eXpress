@@ -1,9 +1,38 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
+import Button from "./Button";
+import SemRadio from "./SemRadio";
+import BranchRadio from "./BranchRadio";
 
 const Syllabus = () => {
+  const [selectedBranch, setSelectedBranch] = useState("IT");
+  const [selectedSem, setSelectedSem] = useState("SEM I");
   return (
-    <div>Syllabus</div>
-  )
-}
+    <div className="bg-[#dbc397] min-h-screen flex justify-center items-center rounded-2xl p-6">
+      <div className="p-6 grid gap-10  grid-cols-2 justify-items-center border bg-amber-100 border-amber-900 rounded-2xl">
+        <p className="place-self-center font-bold text-4xl text-amber-900">
+          Select Semester
+        </p>
+        <p className="place-self-center font-bold text-4xl text-amber-900">
+          Select Branch
+        </p>
+        <SemRadio
+          name="Semesters"
+          selectedOption={selectedSem}
+          setSelectedOption={setSelectedSem}
+        />
+        {/* <p className="flex-1 text-xl text-[#ba3e1f] mb-3">Select Branch</p> */}
+        <BranchRadio
+          name="Branches"
+          selectedOption={selectedBranch}
+          setSelectedOption={setSelectedBranch}
+        />
+        <button className="col-span-2 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white">
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
 
-export default Syllabus
+export default Syllabus;
