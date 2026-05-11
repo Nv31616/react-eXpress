@@ -3,7 +3,6 @@ import { useContext } from "react";
 import LibraryContext from "../src/LibraryContext";
 
 const WoodenRack = forwardRef((props, ref) => {
-  const type = "wdn";
   const number = props.number;
   const side = props.side;
   const id = props.id;

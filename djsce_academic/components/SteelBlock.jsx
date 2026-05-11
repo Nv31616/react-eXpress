@@ -3,7 +3,6 @@ import LibraryContext from "../src/LibraryContext";
 import { useContext } from "react";
 
 const SteelBlock = forwardRef((props, ref) => {
-  const type = "steel";
   const number = props.number;
   const side = props.side;
   const id = props.id;

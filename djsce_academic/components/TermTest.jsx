@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Card from "./Card";
 import BranchRadio from "./BranchRadio";
-import Button from "./Button";
 import SemRadio from "./SemRadio";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +21,6 @@ const TermTest = () => {
           selectedOption={selectedSem}
           setSelectedOption={setSelectedSem}
         />
-        {/* <p className="flex-1 text-xl text-[#ba3e1f] mb-3">Select Branch</p> */}
         <BranchRadio
           name="Branches"
           selectedOption={selectedBranch}

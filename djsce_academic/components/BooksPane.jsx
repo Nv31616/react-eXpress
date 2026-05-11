@@ -5,44 +5,34 @@ import { useContext } from "react";
 
 const BooksPane = () => {
   const [query, setQuery] = useState("");
-  const { books } = useContext(LibraryContext);
-  const { setBooks } = useContext(LibraryContext);
-  const [loading, setLoading] = useState(false);
-  const { setHighlightedId } = useContext(LibraryContext);
+  const { books, setBooks, setHighlightedId } = useContext(LibraryContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  // 1. Calculate the slice of books to show
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = books.slice(indexOfFirstItem, indexOfLastItem);
 
-  // 2. Calculate total pages
   const totalPages = Math.ceil(books.length / itemsPerPage);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
-  // SearchCard.jsx
   useEffect(() => {
-    // 1. Don't search if the query is empty
     if (!query.trim()) {
       setBooks([]);
       return;
     }
 
     const performSearch = async () => {
-      setLoading(true);
       try {
         const response = await fetch(`/api/search/?q=${query}`);
         const data = await response.json();
         setBooks(data.books);
       } catch (error) {
         console.error("Search failed:", error);
-      } finally {
-        setLoading(false);
-      }
+      } 
     };
 
     // 2. THIS IS THE MISSING PART: Actually trigger the function
