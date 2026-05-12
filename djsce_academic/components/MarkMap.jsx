@@ -27,17 +27,16 @@ const MarkMap = () => {
       });
     }
     markmapRef.current.setData(root);
-    markmapRef.current.fit();
   }, [markdown]);
 
   return (
-    <div className="w-full min-h-screen items-center bg-amber-100 border border-amber-900 p-4 flex flex-col">
-      <p className="font-bold text-2xl text-amber-900 mb-4">
+    <div className="w-full min-h-screen bg-amber-100 border border-amber-900 p-4 flex flex-col">
+      <p className="font-bold place-self-center text-2xl text-amber-900">
         {subject} — Mind Map
       </p>
 
       {/* Controls */}
-      <div className="flex gap-3 mb-4">
+      <div className="flex place-content-end gap-3 mb-4">
         <button
           onClick={() => markmapRef.current?.fit()}
           className="hover:scale-105 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-amber-700 rounded-3xl px-4 h-10 text-white"
@@ -52,17 +51,12 @@ const MarkMap = () => {
         </button>
       </div>
 
-      <div className="w-full rounded-2xl overflow-hidden border border-amber-900">
+      <div className="rounded-2xl mx-4 h-90 overflow-hidden border border-amber-900">
         <style>
         {`
           /* 1. Disable text selection to prevent cursor interference during panning */
           .markmap-node {
             user-select: none;
-            -webkit-user-select: none;
-            cursor: grab;
-          }
-          .markmap-node:active {
-            cursor: grabbing;
           }
 
           /* 2. Increase font size and improve readability */
@@ -79,8 +73,9 @@ const MarkMap = () => {
           }
         `}
       </style>
-        <svg ref={svgRef} style={{ width: "100%", height: "100%" }} />
+        <svg ref={svgRef} style={{ width: "100%" ,height: "80vh" }} />
       </div>
+
     </div>
   );
 };
