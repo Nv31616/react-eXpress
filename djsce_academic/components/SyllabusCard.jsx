@@ -1,16 +1,41 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Card = (props) => {
-  const { subtitle, title } = props;
+const SyllabusCard = (props) => {
+  const { buttonText, subtitle, title } = props;
+  const navigate = useNavigate();
+
+  const fetchAndNavigate = async (subject) => {
+    try {
+      const response = await fetch(
+        `/api/syllabus/markmap/?subject=${subject}`,
+      );
+      const data = await response.json();
+      navigate("/markmap", {
+        state: {
+          subject: subject,
+          markdown: data.markdown,
+        },
+      });
+    } catch (error) {
+      console.error("Failed to fetch markdown:", error);
+    }
+  };
 
   return (
     <div className="p-4 flex flex-col gap-2 items-center border bg-amber-100 border-amber-900 rounded-2xl">
       <p className="font-bold text-4xl text-amber-900">{title}</p>
       <p className="text-xl text-[#ba3e1f] mb-3">{subtitle}</p>
       <button
+        className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
+        onClick={() => fetchAndNavigate(title)}
+      >
+        View MarkMap
+      </button>
+      <button
         className="flex gap-3 items-center justify-center hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
         onClick={() => {
-          window.open(`/api/termtest/download/${title}/`);
+          window.open(`/api/syllabus/download/${title}/`);
         }}
       >
         <svg
@@ -36,4 +61,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default SyllabusCard;

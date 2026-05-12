@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import SemRadio from "./SemRadio";
 import BranchRadio from "./BranchRadio";
+import { useNavigate } from "react-router-dom";
 
 const Syllabus = () => {
+  const navigate = useNavigate();
   const [selectedBranch, setSelectedBranch] = useState("IT");
   const [selectedSem, setSelectedSem] = useState("SEM I");
   return (
@@ -20,13 +22,22 @@ const Syllabus = () => {
           selectedOption={selectedSem}
           setSelectedOption={setSelectedSem}
         />
-        {/* <p className="flex-1 text-xl text-[#ba3e1f] mb-3">Select Branch</p> */}
         <BranchRadio
           name="Branches"
           selectedOption={selectedBranch}
           setSelectedOption={setSelectedBranch}
         />
-        <button className="col-span-2 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white">
+        <button
+          className="col-span-2 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
+          onClick={() => {
+            navigate("/Syllabus/subjects", {
+              state: {
+                branch: selectedBranch,
+                sem: selectedSem,
+              },
+            });
+          }}
+        >
           Next
         </button>
       </div>
