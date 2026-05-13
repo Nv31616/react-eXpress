@@ -1,17 +1,14 @@
-import React from "react";
+// Library.jsx
+import React, { useState, useRef, useEffect } from "react";
 import SteelBlock from "./SteelBlock";
 import Computers from "./Computers";
 import WoodenRack from "./WoodenRack";
 import BooksPane from "./BooksPane";
-import { useState } from "react";
-import { createContext } from "react";
 import LibraryContext from "../src/LibraryContext";
-import { useRef } from "react";
-import { useEffect } from "react";
 
 const Library = () => {
-  const totalTiles = 20 * 30; //Number of background floor tiles
-  const tiles = Array.from({ length: totalTiles }); //Background floor tiles
+  const totalTiles = 20 * 30;
+  const tiles = Array.from({ length: totalTiles });
   const [highlightedId, setHighlightedId] = useState("");
   const [books, setBooks] = useState([]);
   const rackRefs = useRef({});
@@ -40,9 +37,9 @@ const Library = () => {
     >
       <div className="flex flex-col m-3 md:flex-row justify-center items-center">
         <BooksPane />
-        <div className="relative m-3 w-[296px] h-[472px] scale-[1.19] origin-top ">
+        <div className="relative m-3 w-[94.72vw] h-[69.75vh] origin-top">
           <div
-            className="absolute inset-0  z-0 grid"
+            className="absolute inset-0 z-0 grid"
             style={{
               gridTemplateColumns: "repeat(20, 1fr)",
               gridTemplateRows: "repeat(30, 1fr)",
@@ -51,17 +48,17 @@ const Library = () => {
             {tiles.map((_, i) => (
               <div
                 key={i}
-                className="border-[0.5px] border-slate-300/50 bg-[#c2b8ac]" //Repeating  floor tiles
+                className="border-[0.5px] border-slate-300/50 bg-[#c2b8ac]"
               />
             ))}
           </div>
-          {/* Aspect ratio for proper viewing 895x1249 */}
-          <div //Parent grid of library Wooden Racks, Steel Blocks & Computers
-            className="relative mx-auto z-10 grid grid-cols-13 px-5 py-4 border-2 border-amber-800"
+          <div
+            className="relative mx-auto z-10 grid grid-cols-13 border-2 border-amber-800"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(13, 20px)",
-              gridTemplateRows: "64px 64px 64px 64px 40px 40px 40px 30px 30px",
+              padding: "2.36vh 6.4vw",
+              gridTemplateColumns: "repeat(13, 6.4vw)",
+              gridTemplateRows: "9.46vh 9.46vh 9.46vh 9.46vh 5.91vh 5.91vh 5.91vh 4.43vh 4.43vh",
             }}
           >
             <div className="col-span-3 flex h-2.5 flex-col">
@@ -69,14 +66,12 @@ const Library = () => {
                 side="LH"
                 number="13"
                 id="wdn-lh-13"
-                alignment="top-full left-0 mt-2"
                 ref={(el) => (rackRefs.current["wdn-lh-13"] = el)}
               />
               <WoodenRack
                 side="LH"
                 number="12"
                 id="wdn-lh-12"
-                alignment="top-full left-0 mt-2"
                 ref={(el) => (rackRefs.current["wdn-lh-12"] = el)}
               />
             </div>
@@ -300,7 +295,7 @@ const Library = () => {
                 ref={(el) => (rackRefs.current["stl-f-5"] = el)}
               />
               <SteelBlock
-                id="stl-b-6"
+                id="stl-b-5"
                 side="B"
                 number="5"
                 ref={(el) => (rackRefs.current["stl-b-5"] = el)}
@@ -342,13 +337,13 @@ const Library = () => {
             <div className="col-span-1" />
             <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
               <SteelBlock
-                id="stl-f-4"
+                id="stl-b-4"
                 side="B"
                 number="4"
                 ref={(el) => (rackRefs.current["stl-b-4"] = el)}
               />
               <SteelBlock
-                id="stl-b-4"
+                id="stl-f-4"
                 side="F"
                 number="4"
                 ref={(el) => (rackRefs.current["stl-f-4"] = el)}
@@ -420,14 +415,6 @@ const Library = () => {
               />
             </div>
             <div className="col-span-3"></div>
-            {/* <div className="col-span-3  flex items-end">
-              <div className="backdrop-blur-xl w-full flex border border-[#875003] flex-col items-center justify-between p-1">
-                <span className="text-xs font-mono text-[#875003]">↑</span>
-                <span className="text-xs font-mono text-[#875003]">
-                  Entrance
-                </span>
-              </div>
-            </div> */}
 
             <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
               <SteelBlock
@@ -444,13 +431,7 @@ const Library = () => {
               />
             </div>
 
-            <div className="col-span-1 -ml-10 flex h-full flex-col items-center justify-end pb-0">
-              {/* <div className="backdrop-blur-md items-center flex h-25 w-20 justify-center border-2 text-[12px] text-center font-bold font-mono text-[#875003]">
-                Librarian's
-                <br />
-                Desk
-              </div> */}
-            </div>
+            <div className="col-span-1" />
 
             <div className="col-span-3 flex flex-col">
               <div className="col-span-3 flex h-2.5 flex-col">
@@ -481,10 +462,10 @@ const Library = () => {
               />
             </div>
             <div className="col-span-2"></div>
-            <div className="col-span-3  flex items-end">
+            <div className="col-span-3 flex items-end">
               <div className="backdrop-blur-xl w-full flex border border-[#875003] flex-col items-center justify-between">
-                <span className="text-[8px] font-mono text-[#875003]">↑</span>
-                <span className="text-[8px] font-mono text-[#875003]">
+                <span className="text-[1.3vw] font-mono text-[#875003]">↑</span>
+                <span className="text-[1.3vw] font-mono text-[#875003]">
                   Entrance
                 </span>
               </div>
