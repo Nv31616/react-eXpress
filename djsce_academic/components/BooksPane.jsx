@@ -45,7 +45,7 @@ const BooksPane = () => {
   }, [query]); // Re-run when query changes
 
   return (
-    <div className="w-1/3 bg-[#dbc397] my-3 ml-2 mr-3 rounded-2xl p-6 flex flex-col border-amber-900 border-2">
+    <div className="w-1/3 bg-[#dbc397] hidden md:flex my-3 ml-2 mr-3 rounded-2xl p-6 flex-col border-amber-900 border-2">
       <h2 className="text-2xl font-bold font-mono text-amber-900 mb-4">
         Find a Book
       </h2>
