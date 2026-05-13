@@ -10,22 +10,22 @@ const Navbar = () => {
         src="../src/assets/PowerWatch.svg"
         className="h-16 w-auto group-hover:animate-spin"
       /> */}
-      <p className="font-bold">DJ</p>
+      <p className="font-bold">DJ Acad</p>
       <button
         onClick={() => navigate("/")}
-        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono  text-xs hover:bg-white hover:text-[#B83D1E] rounded-full   text-white"
+        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono  text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full   text-white"
       >
         Library
       </button>
       <button
         onClick={() => navigate("/TermTest")}
-        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-xs hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
+        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
       >
         Term Test
       </button>
             <button
         onClick={() => navigate("/Syllabus")}
-        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-xs hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
+        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
       >
         Syllabus
       </button>

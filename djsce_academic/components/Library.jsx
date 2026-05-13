@@ -38,11 +38,11 @@ const Library = () => {
         setCurrentPage,
       }}
     >
-      <div className="flex justify-center">
+      <div className="flex flex-col m-3 md:flex-row justify-center items-center">
         <BooksPane />
-        <div className="relative mx-5 my-5 ">
+        <div className="relative m-3 w-[296px] h-[472px] scale-[1.19] origin-top ">
           <div
-            className="absolute inset-0 z-0 grid"
+            className="absolute inset-0  z-0 grid"
             style={{
               gridTemplateColumns: "repeat(20, 1fr)",
               gridTemplateRows: "repeat(30, 1fr)",

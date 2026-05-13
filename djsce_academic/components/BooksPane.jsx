@@ -45,8 +45,8 @@ const BooksPane = () => {
   }, [query]); // Re-run when query changes
 
   return (
-    <div className="w-1/3 bg-[#dbc397] hidden md:flex my-3 ml-2 mr-3 rounded-2xl p-6 flex-col border-amber-900 border-2">
-      <h2 className="text-2xl font-bold font-mono text-amber-900 mb-4">
+    <div className="bg-[#dbc397] w-full md:flex-row m-3 rounded-2xl p-3 flex-col border-amber-900 border-2">
+      <h2 className="text-xl font-bold font-mono text-amber-900 mb-4">
         Find a Book
       </h2>
       <input
@@ -58,7 +58,7 @@ const BooksPane = () => {
           setCurrentPage(1); // Reset to page 1 when searching
         }}
         placeholder="Enter Book Title or Topic..."
-        className="w-full p-3 border-2 border-amber-700 text-xl text-amber-900 font-bold font-mono rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-900"
+        className="w-full p-3 border-2 border-amber-700 text-xs text-amber-900 font-bold font-mono rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-900"
       />
       <div id="results-list" className="mt-6 flex-1 overflow-y-auto space-y-3">
         {currentItems.map((book, i) => (
@@ -66,10 +66,10 @@ const BooksPane = () => {
             key={i}
             className="p-4 border bg-amber-100 border-amber-900 rounded-2xl"
           >
-            <p className="font-bold text-xl text-amber-900">{book.title}</p>
-            <p className="text-s text-[#ba3e1f] mb-3">{`${book.type} ${book.number} | ${book.side}`}</p>
+            <p className="font-bold text-xs text-amber-900">{book.title}</p>
+            <p className="text-xs text-[#ba3e1f] mb-3">{`${book.type} ${book.number} | ${book.side}`}</p>
             <button
-              className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white"
+              className="hover:scale-105 text-xs cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full py-1 px-2 text-white"
               onClick={() => setHighlightedId(book.location_id)}
             >
               Show on Map
@@ -79,11 +79,11 @@ const BooksPane = () => {
       </div>
       {/* Pagination controls */}
       {books.length > itemsPerPage && (
-        <div className="flex justify-between m-4">
+        <div className="flex justify-evenly mx-4 mt-3">
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => prev - 1)}
-            className="disabled:opacity-30 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white"
+            className="disabled:opacity-30 hover:scale-105 text-xs cursor-pointer py-1 px-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
           >
             Previous
           </button>
@@ -91,7 +91,7 @@ const BooksPane = () => {
             Page {currentPage} of {totalPages}
           </span>
           <button
-            className="disabled:opacity-30 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-30 h-10 text-white"
+            className="disabled:opacity-30 hover:scale-105 text-xs cursor-pointer py-1 px-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
           >
