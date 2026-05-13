@@ -1,13 +1,10 @@
-import React, { forwardRef, useState } from "react";
-import { useContext } from "react";
+// WoodenRack.jsx
+import React, { forwardRef, useContext } from "react";
 import LibraryContext from "../src/LibraryContext";
 
 const WoodenRack = forwardRef((props, ref) => {
-  const number = props.number;
-  const side = props.side;
-  const id = props.id;
-  const { highlightedId, setBooks, setCurrentPage } =
-    useContext(LibraryContext);
+  const { number, side, id } = props;
+  const { highlightedId, setBooks, setCurrentPage } = useContext(LibraryContext);
   const highlight = id === highlightedId;
 
   return (
@@ -24,11 +21,13 @@ const WoodenRack = forwardRef((props, ref) => {
         }
       }}
     >
-      <p className="text-[5px] font-bold font-mono absolute z-10 left-1/2 -translate-x-1/2">{`${side} ${number}`}</p>
+      <p className="text-[1.6vw] font-bold font-mono absolute z-10 left-1/2 -translate-x-1/2">
+        {`${side} ${number}`}
+      </p>
       <img
         ref={ref}
         src="../src/assets/wooden.png"
-        className={`${highlight ? "opacity-0" : ""} hover:opacity-0 h-2.5 w-full`}
+        className={`${highlight ? "opacity-0" : ""} hover:opacity-0 h-[1.48vh] w-full`}
       />
     </div>
   );
