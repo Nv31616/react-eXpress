@@ -3,7 +3,7 @@ import BranchRadio from "./BranchRadio";
 import SemRadio from "./SemRadio";
 import { useNavigate } from "react-router-dom";
 
-const TermTest = () => {
+const PYPs = () => {
   const navigate = useNavigate();
   const [selectedBranch, setSelectedBranch] = useState("IT");
   const [selectedSem, setSelectedSem] = useState("SEM I");
@@ -98,4 +98,4 @@ const TermTest = () => {
   );
 };
 
-export default TermTest;
+export default PYPs;

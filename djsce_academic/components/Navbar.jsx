@@ -18,16 +18,22 @@ const Navbar = () => {
         Library
       </button>
       <button
-        onClick={() => navigate("/TermTest")}
+        onClick={() => navigate("/PYPs")}
         className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
       >
-        Term Test
+        PYPs
       </button>
-            <button
+      <button
         onClick={() => navigate("/Syllabus")}
         className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
       >
         Syllabus
+      </button>
+      <button
+        onClick={() => navigate("/UploadSection")}
+        className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono text-[9px] hover:bg-white hover:text-[#B83D1E] rounded-full  text-white"
+      >
+        Upload
       </button>
     </div>
   );

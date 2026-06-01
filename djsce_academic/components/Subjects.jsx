@@ -653,7 +653,7 @@ const Subjects = () => {
       )}
 
       <button
-        onClick={() => navigate("/TermTest")}
+        onClick={() => navigate("/PYPs")}
         className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-64 h-10 text-white"
       >
         Back

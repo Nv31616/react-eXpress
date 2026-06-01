@@ -34,7 +34,7 @@ const SyllabusCard = (props) => {
         className="flex gap-3 items-center justify-center hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
         onClick={async () => {
           const response = await fetch(
-            `/api/download/?subject=${encodeURIComponent(title)}&type=syllabus`,
+            `/api/download/?subject=${encodeURIComponent(title)}&type=Syllabus`,
           );
           const data = await response.json();
           if (data.url) window.open(data.url);
