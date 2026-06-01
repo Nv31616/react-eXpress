@@ -9,24 +9,28 @@ const Syllabus = () => {
   const [selectedBranch, setSelectedBranch] = useState("IT");
   const [selectedSem, setSelectedSem] = useState("SEM I");
   return (
-    <div className="bg-[#dbc397] min-h-screen flex justify-center items-center rounded-2xl p-6">
-      <div className="p-6 grid gap-10  grid-cols-2 justify-items-center border bg-amber-100 border-amber-900 rounded-2xl">
-        <p className="place-self-center font-bold text-4xl text-amber-900">
-          Select Semester
-        </p>
-        <p className="place-self-center font-bold text-4xl text-amber-900">
-          Select Branch
-        </p>
-        <SemRadio
-          name="Semesters"
-          selectedOption={selectedSem}
-          setSelectedOption={setSelectedSem}
-        />
-        <BranchRadio
-          name="Branches"
-          selectedOption={selectedBranch}
-          setSelectedOption={setSelectedBranch}
-        />
+      <div className="p-6 flex flex-col gap-10 justify-items-center border bg-amber-100 border-amber-900 rounded-2xl m-4">
+        <div className="flex flex-col gap-3">
+          <p className="place-self-center font-bold text-3xl text-amber-900">
+            Select Semester
+          </p>
+          <SemRadio
+            name="Semesters"
+            selectedOption={selectedSem}
+            setSelectedOption={setSelectedSem}
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <p className="place-self-center font-bold text-3xl text-amber-900">
+            Select Branch
+          </p>
+          <BranchRadio
+            name="Branches"
+            selectedOption={selectedBranch}
+            setSelectedOption={setSelectedBranch}
+          />
+        </div>
+
         <button
           className="col-span-2 hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
           onClick={() => {
@@ -41,7 +45,6 @@ const Syllabus = () => {
           Next
         </button>
       </div>
-    </div>
   );
 };
 
