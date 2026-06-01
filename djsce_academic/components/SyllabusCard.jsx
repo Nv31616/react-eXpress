@@ -7,9 +7,7 @@ const SyllabusCard = (props) => {
 
   const fetchAndNavigate = async (subject) => {
     try {
-      const response = await fetch(
-        `/api/syllabus/markmap/?subject=${subject}`,
-      );
+      const response = await fetch(`/api/syllabus/markmap/?subject=${subject}`);
       const data = await response.json();
       navigate("/markmap", {
         state: {
@@ -24,7 +22,9 @@ const SyllabusCard = (props) => {
 
   return (
     <div className="p-4 flex flex-col gap-2 items-center border bg-amber-100 border-amber-900 rounded-2xl">
-      <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-amber-900">{title}</p>
+      <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-amber-900">
+        {title}
+      </p>
       <p className="text-xl text-[#ba3e1f] mb-3">{subtitle}</p>
       <button
         className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
@@ -34,8 +34,13 @@ const SyllabusCard = (props) => {
       </button>
       <button
         className="flex gap-3 items-center justify-center hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
-        onClick={() => {
-          window.open(`/api/download/?subject=${title}&type=syllabus`);
+        onClick={async () => {
+          const response = await fetch(
+            `/api/download/?subject=${encodeURIComponent(title)}&type=syllabus`,
+          );
+          const data = await response.json();
+          if (data.url) window.open(data.url);
+          else alert("File not available yet");
         }}
       >
         <svg
