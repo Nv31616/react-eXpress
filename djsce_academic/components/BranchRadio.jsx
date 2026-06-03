@@ -12,8 +12,8 @@ const BranchRadio = ({ name, selectedOption, setSelectedOption }) => {
             id={`${name}-${branch}`}
             name={name}
             value={branch}
-            checked={selectedOption === branch} // controlled by Card
-            onChange={(e) => setSelectedOption(e.target.value)} // updates Card's state
+            checked={selectedOption === branch} // controlled by ExamCard
+            onChange={(e) => setSelectedOption(e.target.value)} // updates ExamCard's state
           />
           <label className="cursor-pointer" htmlFor={`${name}-${branch}`}>{branch}</label>
         </div>

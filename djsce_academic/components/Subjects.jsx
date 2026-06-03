@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Card from "./Card";
+import ExamCard from "./ExamCard";
 
 const subjects = {
   IT: {
@@ -629,7 +629,7 @@ const subjects = {
   },
 };
 
-const Subjects = () => {
+const ExamSubjects = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { branch, sem, examType } = state;
@@ -643,7 +643,7 @@ const Subjects = () => {
       {subjectList.length > 0 ? (
         <div className="grid grid-cols-3 gap-4 w-full">
           {subjectList.map((subject) => (
-            <Card key={subject} title={subject} examType={examType} />
+            <ExamCard key={subject} title={subject} examType={examType} />
           ))}
         </div>
       ) : (
@@ -662,4 +662,4 @@ const Subjects = () => {
   );
 };
 
-export default Subjects;
+export default ExamSubjects;

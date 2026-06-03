@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Card = (props) => {
+const ExamCard = (props) => {
   const { subtitle, title,examType } = props;
   const projectID = "ijpcsvmrrfhvkezgzopf";
   const bucket = "subjects";
@@ -42,4 +42,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default ExamCard;
