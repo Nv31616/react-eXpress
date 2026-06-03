@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Card = (props) => {
-  const { subtitle, title } = props;
+  const { subtitle, title,examType } = props;
   const projectID = "ijpcsvmrrfhvkezgzopf";
   const bucket = "subjects";
   const cleanSubject = title.replace(/[\s\.\,\-]+/g, "_");

@@ -632,7 +632,7 @@ const subjects = {
 const Subjects = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { branch, sem } = state;
+  const { branch, sem, examType } = state;
   const subjectList = subjects[branch][sem];
   return (
     <div className="bg-[#dbc397] min-h-screen flex flex-col items-center p-6 gap-6">
@@ -643,7 +643,7 @@ const Subjects = () => {
       {subjectList.length > 0 ? (
         <div className="grid grid-cols-3 gap-4 w-full">
           {subjectList.map((subject) => (
-            <Card key={subject} title={subject} buttonText="Download" />
+            <Card key={subject} title={subject} examType={examType} />
           ))}
         </div>
       ) : (
