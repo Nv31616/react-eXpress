@@ -1,6 +1,7 @@
 import React, { forwardRef, useState } from "react";
 import { useContext } from "react";
 import LibraryContext from "../src/LibraryContext";
+import { supabase } from "../src/supabase";
 
 const WoodenRack = forwardRef((props, ref) => {
   const number = props.number;
@@ -15,9 +16,15 @@ const WoodenRack = forwardRef((props, ref) => {
       className={`${highlight ? "scale-105" : ""} hover:bg-none relative flex cursor-pointer bg-[#FEA630] hover:scale-105 items-center border-2 border-amber-800 justify-center`}
       onClick={async () => {
         try {
-          const response = await fetch(`/api/search/?location_id=${id}`);
-          const data = await response.json();
-          setBooks(data.books);
+          // 👈 Replace the local endpoint fetch with direct database query
+          const { data, error } = await supabase
+            .from("books")
+            .select("title, type, number, side, location_id")
+            .eq("location_id", id);
+
+          if (error) throw error;
+
+          setBooks(data || []);
           setCurrentPage(1);
         } catch (error) {
           console.error("Search failed:", error);

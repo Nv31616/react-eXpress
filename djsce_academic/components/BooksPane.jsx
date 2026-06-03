@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import LibraryContext from "../src/LibraryContext";
 import { useContext } from "react";
+import { supabase } from "../src/supabase";
 
 const BooksPane = () => {
   const [query, setQuery] = useState("");
@@ -27,9 +28,15 @@ const BooksPane = () => {
 
     const performSearch = async () => {
       try {
-        const response = await fetch(`/api/search/?q=${query}`);
-        const data = await response.json();
-        setBooks(data.books);
+        // 👈 Query Supabase directly instead of fetch()
+        const { data, error } = await supabase
+          .from("books")
+          .select("title, type, number, side, location_id")
+          .ilike("title", `%${query}%`); // Case-insensitive partial match
+
+        if (error) throw error;
+
+        setBooks(data || []);
       } catch (error) {
         console.error("Search failed:", error);
       } 
