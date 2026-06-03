@@ -2,6 +2,12 @@ import React, { useState } from "react";
 
 const Card = (props) => {
   const { subtitle, title } = props;
+  const projectID = "ijpcsvmrrfhvkezgzopf";
+  const bucket = "subjects";
+  const cleanSubject = title.replace(/[\s\.\,\-]+/g, "_");
+
+  // The direct public link to your zip folder package:
+  const zipDownloadUrl = `https://${projectID}.supabase.co/storage/v1/object/public/${bucket}/${examType}/${cleanSubject}/${cleanSubject}.zip`;
 
   return (
     <div className="p-4 flex flex-col gap-2 items-center border bg-amber-100 border-amber-900 rounded-2xl">
@@ -10,7 +16,7 @@ const Card = (props) => {
       <button
         className="flex gap-3 items-center justify-center hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
         onClick={() => {
-          window.open(`/api/PYPs/download/${title}/`);
+          window.open(zipDownloadUrl);
         }}
       >
         <svg

@@ -7,6 +7,7 @@ const PYPs = () => {
   const navigate = useNavigate();
   const [selectedBranch, setSelectedBranch] = useState("IT");
   const [selectedSem, setSelectedSem] = useState("SEM I");
+
   return (
     <div className="p-6 flex flex-col gap-10 justify-items-center border bg-amber-100 border-amber-900 rounded-2xl m-4">
       <div className="flex flex-col gap-3">
