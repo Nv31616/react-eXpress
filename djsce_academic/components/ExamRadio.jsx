@@ -4,9 +4,9 @@ const ExamRadio = ({ name, selectedOption, setSelectedOption }) => {
   // An array of objects keeping your storage value keys clean 
   // while displaying friendly text on the screen
   const exams = [
-    { label: "Term Test 1 (TT1)", value: "TT1" },
-    { label: "Term Test 2 (TT2)", value: "TT2" },
-    { label: "End Sem Exam (ESE)", value: "ESE" },
+    { label: "Term Test 1", value: "TT1" },
+    { label: "Term Test 2", value: "TT2" },
+    { label: "End Sem Exam", value: "ESE" },
   ];
 
   return (

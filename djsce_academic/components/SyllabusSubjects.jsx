@@ -642,7 +642,7 @@ const SyllabusSubjects = () => {
       </p>
 
       {subjectList.length > 0 ? (
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
           {subjectList.map((subject) => (
             <SyllabusCard key={subject} title={subject} />
           ))}
