@@ -31,11 +31,11 @@ const WoodenRack = forwardRef((props, ref) => {
         }
       }}
     >
-      <p className="text-[5px] font-bold font-mono absolute z-10 left-1/2 -translate-x-1/2">{`${side} ${number}`}</p>
+      <p className="text-[10px] font-bold font-mono absolute z-10 left-1/2 -translate-x-1/2">{`${side} ${number}`}</p>
       <img
         ref={ref}
         src="../src/assets/wooden.png"
-        className={`${highlight ? "opacity-0" : ""} hover:opacity-0 h-2.5 w-full`}
+        className={`${highlight ? "opacity-0" : ""} hover:opacity-0 h-3.5 w-full`}
       />
     </div>
   );
