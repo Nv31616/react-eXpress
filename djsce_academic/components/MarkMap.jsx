@@ -51,7 +51,7 @@ const MarkMap = () => {
         </button>
       </div>
 
-      <div className="rounded-2xl mx-4 h-90 overflow-hidden border border-amber-900">
+      <div className="rounded-2xl mx-4 h-screen overflow-hidden border border-amber-900">
         <style>
         {`
           /* 1. Disable text selection to prevent cursor interference during panning */

@@ -57,7 +57,7 @@ const SyllabusCard = (props) => {
             <path d="M1 16v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3M6 11l4 4 4-4M10 1v14" />
           </g>
         </svg>
-        Download
+        Download PDF
       </button>
     </div>
   );
