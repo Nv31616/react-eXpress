@@ -406,10 +406,10 @@ export default function UploadSection() {
           </select>
         </div>
 
-        {/* Exam Type Group */}
+        {/* Papers Type Group */}
         <div className="flex flex-col gap-1.5">
           <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
-            Exam Category
+            Exam Type
           </label>
           <select
             value={examType}
@@ -442,9 +442,9 @@ export default function UploadSection() {
           className="mt-2 self-center max-w-xs hover:scale-[1.02] active:scale-[0.98] transition-transform cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-11 text-white text-sm sm:text-base font-bold disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2"
         >
           {loading ? (
-            <span className="animate-pulse">Uploading Package...</span>
+            <span className="animate-pulse">Uploading File...</span>
           ) : (
-            "Upload to Supabase Storage"
+            "Upload"
           )}
         </button>
       </form>

@@ -641,7 +641,7 @@ const ExamSubjects = () => {
       </p>
 
       {subjectList.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-3 gap-4 w-full">
           {subjectList.map((subject) => (
             <ExamCard key={subject} title={subject} examType={examType} />
           ))}
@@ -653,7 +653,7 @@ const ExamSubjects = () => {
       )}
 
       <button
-        onClick={() => navigate("/PYPs")}
+        onClick={() => navigate("/Papers")}
         className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-64 h-10 text-white"
       >
         Back
