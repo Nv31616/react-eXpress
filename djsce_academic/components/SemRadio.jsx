@@ -20,7 +20,7 @@ ter"
       {sems.map((sem) => (
         <div
           key={sem}
-          className="flex cursor-pointer gap-2 justify-self-start px-6"
+          className="flex cursor-pointer gap-2 justify-self-start px-5"
         >
           <input
             className="cursor-pointer"

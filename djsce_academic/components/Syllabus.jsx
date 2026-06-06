@@ -9,10 +9,10 @@ const Syllabus = () => {
   const [selectedBranch, setSelectedBranch] = useState("IT");
   const [selectedSem, setSelectedSem] = useState("SEM I");
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
+    <div className="flex justify-center">
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 max-w-3xl gap-10 border bg-amber-100 border-amber-900 rounded-2xl m-4">
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-3xl text-amber-900">
+          <p className="place-self-center font-bold text-xl sm:text-2xl lg:text-3xl text-amber-900">
             Select Semester
           </p>
           <SemRadio
@@ -22,7 +22,7 @@ const Syllabus = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-3xl text-amber-900">
+          <p className="place-self-center font-bold text-xl sm:text-2xl lg:text-3xl text-amber-900">
             Select Branch
           </p>
           <BranchRadio

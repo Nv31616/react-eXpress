@@ -641,7 +641,7 @@ const ExamSubjects = () => {
       </p>
 
       {subjectList.length > 0 ? (
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
           {subjectList.map((subject) => (
             <ExamCard key={subject} title={subject} examType={examType} />
           ))}
