@@ -45,8 +45,13 @@ const BooksPane = () => {
   }, [query]); // Re-run when query changes
 
   return (
+<<<<<<< HEAD
     <div className="bg-[#dbc397] w-full md:flex-row m-3 rounded-2xl p-3 flex-col border-amber-900 border-2">
       <h2 className="text-xl font-bold font-mono text-amber-900 mb-4">
+=======
+    <div className="w-1/3 bg-[#dbc397] my-3 ml-2 mr-3 rounded-2xl p-6 flex flex-col border-amber-900 border-2">
+      <h2 className="text-2xl font-bold font-mono text-amber-900 mb-4">
+>>>>>>> parent of a873ed6 (Made the Library map according to smartphone device)
         Find a Book
       </h2>
       <input

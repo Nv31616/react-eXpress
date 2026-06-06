@@ -35,9 +35,9 @@ const Library = () => {
         setCurrentPage,
       }}
     >
-      <div className="flex flex-col m-3 md:flex-row justify-center items-center">
+      <div className="flex justify-center">
         <BooksPane />
-        <div className="relative m-3 w-[94.72vw] h-[69.75vh] origin-top">
+        <div className="relative mx-5 my-5 ">
           <div
             className="absolute inset-0 z-0 grid"
             style={{
@@ -52,16 +52,16 @@ const Library = () => {
               />
             ))}
           </div>
-          <div
-            className="relative mx-auto z-10 grid grid-cols-13 border-2 border-amber-800"
+          {/* Aspect ratio for proper viewing 895x1249 */}
+          <div //Parent grid of library Wooden Racks, Steel Blocks & Computers
+            className="relative mx-auto z-10 grid grid-cols-13 px-5 py-4 border-2 border-amber-800"
             style={{
               display: "grid",
-              padding: "2.36vh 6.4vw",
-              gridTemplateColumns: "repeat(13, 6.4vw)",
-              gridTemplateRows: "9.46vh 9.46vh 9.46vh 9.46vh 5.91vh 5.91vh 5.91vh 4.43vh 4.43vh",
+              gridTemplateColumns: "repeat(13, 20px)",
+              gridTemplateRows: "64px 64px 64px 64px 40px 40px 40px 30px 30px",
             }}
           >
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 side="LH"
                 number="13"
@@ -78,7 +78,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-12"
                 side="B"
@@ -94,7 +94,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-3" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-11"
                 side="F"
@@ -111,7 +111,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-rh-13"
                 side="RH"
@@ -126,7 +126,7 @@ const Library = () => {
               />
             </div>
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-lh-11"
                 side="LH"
@@ -143,7 +143,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-10"
                 side="B"
@@ -160,7 +160,7 @@ const Library = () => {
 
             <div className="col-span-3" />
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-9"
                 side="F"
@@ -177,7 +177,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-rh-11"
                 side="RH"
@@ -192,7 +192,7 @@ const Library = () => {
               />
             </div>
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-lh-9"
                 side="LH"
@@ -209,7 +209,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-8"
                 side="B"
@@ -226,7 +226,7 @@ const Library = () => {
 
             <div className="col-span-3" />
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-7"
                 side="F"
@@ -242,7 +242,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-1" />
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-rh-9"
                 side="RH"
@@ -256,7 +256,7 @@ const Library = () => {
                 ref={(el) => (rackRefs.current["wdn-rh-8"] = el)}
               />
             </div>
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-lh-7"
                 side="LH"
@@ -271,7 +271,7 @@ const Library = () => {
               />
             </div>
             <div className="col-span-1" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-6"
                 side="B"
@@ -287,7 +287,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-3" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-5"
                 side="F"
@@ -304,7 +304,7 @@ const Library = () => {
 
             <div className="col-span-1" />
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-rh-7"
                 side="RH"
@@ -319,7 +319,7 @@ const Library = () => {
               />
             </div>
 
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-lh-5"
                 side="LH"
@@ -335,7 +335,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-1" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-4"
                 side="B"
@@ -351,7 +351,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-3" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-3"
                 side="F"
@@ -367,7 +367,7 @@ const Library = () => {
             </div>
 
             <div className="col-span-1" />
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex h-16 flex-col">
               <WoodenRack
                 id="wdn-rh-5"
                 side="RH"
@@ -380,27 +380,33 @@ const Library = () => {
                 number="4"
                 ref={(el) => (rackRefs.current["wdn-rh-4"] = el)}
               />
-            </div>
-            <div className="col-span-10"></div>
-            <div className="col-span-3 flex justify-center">
               <Computers />
             </div>
-            <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex flex-col">
+              <div className="col-span-3 flex h-16 flex-col">
+                <WoodenRack
+                  id="wdn-lh-3"
+                  side="LH"
+                  number="3"
+                  ref={(el) => (rackRefs.current["wdn-lh-3"] = el)}
+                />
+                <WoodenRack
+                  id="wdn-lh-2"
+                  side="LH"
+                  number="2"
+                  ref={(el) => (rackRefs.current["wdn-lh-2"] = el)}
+                />
+              </div>
+              <Computers />
               <WoodenRack
-                id="wdn-lh-3"
+                id="wdn-lh-1"
                 side="LH"
-                number="3"
-                ref={(el) => (rackRefs.current["wdn-lh-3"] = el)}
-              />
-              <WoodenRack
-                id="wdn-lh-2"
-                side="LH"
-                number="2"
-                ref={(el) => (rackRefs.current["wdn-lh-2"] = el)}
+                number="1"
+                ref={(el) => (rackRefs.current["wdn-lh-1"] = el)}
               />
             </div>
             <div className="col-span-1" />
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-b-2"
                 side="B"
@@ -415,8 +421,16 @@ const Library = () => {
               />
             </div>
             <div className="col-span-3"></div>
+            {/* <div className="col-span-3  flex items-end">
+              <div className="backdrop-blur-xl w-full flex border border-[#875003] flex-col items-center justify-between p-1">
+                <span className="text-xs font-mono text-[#875003]">↑</span>
+                <span className="text-xs font-mono text-[#875003]">
+                  Entrance
+                </span>
+              </div>
+            </div> */}
 
-            <div className="col-span-1 -mt-2.5 mb-24 flex h-10">
+            <div className="col-span-1 -mt-8 mb-24 flex h-32">
               <SteelBlock
                 id="stl-f-1"
                 side="F"
@@ -431,10 +445,16 @@ const Library = () => {
               />
             </div>
 
-            <div className="col-span-1" />
+            <div className="col-span-1 -ml-10 flex h-full flex-col items-center justify-end pb-0">
+              {/* <div className="backdrop-blur-md items-center flex h-25 w-20 justify-center border-2 text-[12px] text-center font-bold font-mono text-[#875003]">
+                Librarian's
+                <br />
+                Desk
+              </div> */}
+            </div>
 
-            <div className="col-span-3 flex flex-col">
-              <div className="col-span-3 flex h-2.5 flex-col">
+            <div className="col-span-3 flex flex-col justify-between">
+              <div className="col-span-3 flex h-16 flex-col">
                 <WoodenRack
                   id="wdn-rh-3"
                   side="RH"
@@ -462,10 +482,10 @@ const Library = () => {
               />
             </div>
             <div className="col-span-2"></div>
-            <div className="col-span-3 flex items-end">
+            <div className="col-span-3  flex items-end">
               <div className="backdrop-blur-xl w-full flex border border-[#875003] flex-col items-center justify-between">
-                <span className="text-[1.3vw] font-mono text-[#875003]">↑</span>
-                <span className="text-[1.3vw] font-mono text-[#875003]">
+                <span className="text-[8px] font-mono text-[#875003]">↑</span>
+                <span className="text-[8px] font-mono text-[#875003]">
                   Entrance
                 </span>
               </div>
