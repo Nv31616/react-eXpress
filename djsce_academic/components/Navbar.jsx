@@ -25,13 +25,13 @@ const Navbar = () => {
     <div className="relative">
       <div className="flex justify-between items-center h-16 sticky top-0 z-50 bg-slate-900 px-2 text-white">
         <button
-          className="md:hidden text-white text-2xl"
+          className="sm:hidden text-white text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✕" : "☰"}
         </button>
         <p className="font-bold">DJ Acad</p>
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3">
           <button
             onClick={() => navigate("/")}
             className="hover:scale-105 cursor-pointer p-2 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono  text-sm hover:bg-white hover:text-[#B83D1E] rounded-full   text-white"
