@@ -12,7 +12,7 @@ const Syllabus = () => {
     <div className="flex justify-center">
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 max-w-3xl gap-10 border bg-[#0f0f0f] border-[#2a0a0a] rounded-2xl m-4">
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-xl sm:text-2xl lg:text-3xl text-[#e8e0d8]">
+          <p className="place-self-center font-bold text-3xl text-[#e8e0d8]">
             Select Semester
           </p>
           <SemRadio
@@ -22,7 +22,7 @@ const Syllabus = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-xl sm:text-2xl lg:text-3xl text-[#e8e0d8]">
+          <p className="place-self-center font-bold text-3xl text-[#e8e0d8]">
             Select Branch
           </p>
           <BranchRadio
