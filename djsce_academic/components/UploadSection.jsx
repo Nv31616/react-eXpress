@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 // Initialize your Supabase client
-const SUPABASE_URL = "https://ijpcsvmrrfhvkezgzopf.supabase.co";
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcGNzdm1ycmZodmtlemd6b3BmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MDIxNDA5NiwiZXhwIjoyMDk1NzkwMDk2fQ.85uVpERpG9DgHuw45xWEOG3cIykQclhie-D7cNYYfBA";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 🌟 Extracted Unique Subject Array List
