@@ -68,7 +68,7 @@ const Library = () => {
         {/* Fluid Viewport-Based Container Query Context Box */}
         <div className="w-[90vw] h-[137.22vw] sm:w-[100vw] sm:h-[91.482vw] lg:w-[895px] lg:h-[1364.6065px] [container-type:size] relative m-3 z-10">
           <div
-            className="absolute inset-0 border-2 border-[#cc2222] bg-[#c2b8ac]"
+            className="absolute inset-0 border-2 border-[#B83D1E] bg-[#c2b8ac]"
             style={{
               display: "grid",
               paddingTop: "2.82cqh",

@@ -7,16 +7,13 @@ import Papers from "../components/Papers.jsx";
 import Syllabus from "../components/Syllabus.jsx";
 import ExamSubjects from "../components/ExamSubjects.jsx";
 import SyllabusSubjects from "../components/SyllabusSubjects.jsx";
-import MarkMap from "../components/MarkMap.jsx";
 import UploadSection from "../components/UploadSection.jsx";
-import GlowWrapper from "../components/GlowWrapper.jsx";
 import Home from "../components/Home.jsx";
 
 function App() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      {/* <GlowWrapper> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/library" element={<Library />} />
@@ -24,10 +21,8 @@ function App() {
           <Route path="/Syllabus" element={<Syllabus />} />
           <Route path="/subjects" element={<ExamSubjects />} />
           <Route path="/Syllabus/subjects" element={<SyllabusSubjects />} />
-          <Route path="/markmap" element={<MarkMap />} />
           <Route path="/UploadSection" element={<UploadSection />} />
         </Routes>
-      {/* </GlowWrapper> */}
     </div>
   );
 }

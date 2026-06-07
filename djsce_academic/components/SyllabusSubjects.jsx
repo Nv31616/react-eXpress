@@ -637,7 +637,7 @@ const SyllabusSubjects = () => {
 
   return (
     <div className="bg-[#dbc397] min-h-screen flex flex-col items-center p-6 gap-6">
-      <p className="font-bold text-4xl text-[#e8e0d8]">
+      <p className="font-bold text-4xl text-amber-900">
         {sem} — {branch}
       </p>
 
@@ -648,14 +648,14 @@ const SyllabusSubjects = () => {
           ))}
         </div>
       ) : (
-        <p className="text-[#c8c0b8] font-mono text-xl">
+        <p className="text-amber-800 font-mono text-xl">
           No subjects found for this selection.
         </p>
       )}
 
       <button
         onClick={() => navigate("/Syllabus")}
-        className="hover:scale-105 cursor-pointer bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-3xl w-64 h-10 text-white"
+        className="hover:scale-105 cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-64 h-10 text-white"
       >
         Back
       </button>

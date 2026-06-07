@@ -54,9 +54,9 @@ const BooksPane = () => {
 
   return (
     /* Adjusted container padding to scale with screens (p-3 -> md:p-5 -> lg:p-6) */
-    <div className="bg-[#0f0f0f] w-full m-3 rounded-2xl p-3 md:p-5 lg:p-6 flex flex-col sm:h-full border-[#2a0a0a] border-2">
+    <div className="bg-amber-100 w-full m-3 rounded-2xl p-3 md:p-5 lg:p-6 flex flex-col sm:h-full border-amber-900 border-2">
       {/* Title scales from text-xl up to text-3xl */}
-      <h2 className="text-xl lg:text-3xl font-bold font-mono text-[#e8e0d8] mb-4 lg:mb-6">
+      <h2 className="text-xl lg:text-3xl font-bold font-mono text-amber-900 mb-4 lg:mb-6">
         Find a Book
       </h2>
 
@@ -70,7 +70,7 @@ const BooksPane = () => {
           setCurrentPage(1);
         }}
         placeholder="Enter Book Title or Topic..."
-        className="w-full p-3 md:p-4 border-2 border-[#cc2222] text-xs md:text-sm lg:text-base text-[#e8e0d8] font-bold font-mono rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-900"
+        className="w-full p-3 md:p-4 border-2 border-[#B83D1E] text-xs md:text-sm lg:text-base text-amber-900 font-bold font-mono rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-900"
       />
 
       {isLoading ? (
@@ -100,21 +100,21 @@ const BooksPane = () => {
               /* Card container handles scaling padding */
               <div
                 key={i}
-                className="p-4 md:p-5 border bg-[#0f0f0f] border-[#2a0a0a] rounded-2xl shadow-sm"
+                className="p-4 md:p-5 border bg-amber-100 border-amber-900 rounded-2xl shadow-sm"
               >
                 {/* Book Title text scaling */}
-                <p className="font-bold text-xs md:text-sm lg:text-base text-[#e8e0d8] mb-1">
+                <p className="font-bold text-xs md:text-sm lg:text-base text-amber-900 mb-1">
                   {book.title}
                 </p>
 
                 {/* Location info text scaling */}
-                <p className="text-xs md:text-sm text-[#cc2222] mb-3 lg:mb-4">
+                <p className="text-xs md:text-sm text-[#ba3e1f] mb-3 lg:mb-4">
                   {`${book.type} ${book.number} | ${book.side}`}
                 </p>
 
                 {/* Button scales its internal text and horizontal/vertical padding steps */}
                 <button
-                  className="hover:scale-105 text-xs md:text-sm cursor-pointer bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-full py-1 px-3 md:py-1.5 md:px-4 text-white transition-all duration-200"
+                  className="hover:scale-105 text-xs md:text-sm cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full py-1 px-3 md:py-1.5 md:px-4 text-white transition-all duration-200"
                   onClick={() => setHighlightedId(book.location_id)}
                 >
                   Show on Map
@@ -125,11 +125,11 @@ const BooksPane = () => {
 
           {/* Pagination controls text and button dimension scaling */}
           {books.length > itemsPerPage && (
-            <div className="flex justify-evenly items-center mx-4 mt-4 lg:mt-6 text-xs md:text-sm lg:text-base font-mono font-bold text-[#e8e0d8]">
+            <div className="flex justify-evenly items-center mx-4 mt-4 lg:mt-6 text-xs md:text-sm lg:text-base font-mono font-bold text-amber-900">
               <button
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage((prev) => prev - 1)}
-                className="disabled:opacity-30 hover:scale-105 text-xs md:text-sm cursor-pointer py-1 px-3 md:py-1.5 md:px-4 bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-full text-white transition-all duration-200"
+                className="disabled:opacity-30 hover:scale-105 text-xs md:text-sm cursor-pointer py-1 px-3 md:py-1.5 md:px-4 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full text-white transition-all duration-200"
               >
                 Previous
               </button>
@@ -137,7 +137,7 @@ const BooksPane = () => {
                 Page {currentPage} of {totalPages}
               </span>
               <button
-                className="disabled:opacity-30 hover:scale-105 text-xs md:text-sm cursor-pointer py-1 px-3 md:py-1.5 md:px-4 bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-full text-white transition-all duration-200"
+                className="disabled:opacity-30 hover:scale-105 text-xs md:text-sm cursor-pointer py-1 px-3 md:py-1.5 md:px-4 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-full text-white transition-all duration-200"
                 disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage((prev) => prev + 1)}
               >

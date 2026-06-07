@@ -14,7 +14,7 @@ const SemRadio = ({ name, selectedOption, setSelectedOption }) => {
 
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-2 gap-1 grid-rows-4 w-full text-[#c8c0b8] text-xl font-mono font-bold place-items-cen
+      className="grid grid-cols-1 md:grid-cols-2 gap-1 grid-rows-4 w-full text-amber-800 text-xl font-mono font-bold place-items-cen
 ter"
     >
       {sems.map((sem) => (

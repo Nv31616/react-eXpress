@@ -3,7 +3,7 @@ import React from "react";
 const BranchRadio = ({ name, selectedOption, setSelectedOption }) => {
   const  branches = ["Comps","IT","CSE-DS","ICB","AIML","AIDS","Mech","EXTC"]
   return (
-    <div className="grid grid-cols-1 gap-1 md:grid-cols-2 grid-rows-4 w-full text-[#c8c0b8] text-xl font-mono font-bold place-items-center">
+    <div className="grid grid-cols-1 gap-1 md:grid-cols-2 grid-rows-4 w-full text-amber-800 text-xl font-mono font-bold place-items-center">
       {branches.map((branch) => (
         <div key={branch} className="flex cursor-pointer gap-2 justify-self-start px-6">
           <input
