@@ -54,7 +54,7 @@ const BooksPane = () => {
 
   return (
     /* Adjusted container padding to scale with screens (p-3 -> md:p-5 -> lg:p-6) */
-    <div className="bg-amber-100 w-full m-3 rounded-2xl p-3 md:p-5 lg:p-6 flex flex-col sm:h-full border-amber-900 border-2">
+    <div className="bg-[#dbc397] w-full m-3 rounded-2xl p-3 md:p-5 lg:p-6 flex flex-col sm:h-full border-amber-900 border-2">
       {/* Title scales from text-xl up to text-3xl */}
       <h2 className="text-xl lg:text-3xl font-bold font-mono text-amber-900 mb-4 lg:mb-6">
         Find a Book
@@ -85,13 +85,13 @@ const BooksPane = () => {
             className="mt-6 flex-1 overflow-y-auto space-y-3 md:space-y-4"
           >
             {!found && (
-              <p className="font-mono text-xl text-[#ffffff] text-center">
+              <p className="font-mono text-xl text-amber-900 text-center">
                 No books found for {highlightedId}.
               </p>
             )}
 
             {query.trim() !== "" && books.length === 0 && (
-              <p className="font-mono text-xl text-[#ffffff] text-center">
+              <p className="font-mono text-xl text-amber-900 text-center">
                 No books found.
               </p>
             )}

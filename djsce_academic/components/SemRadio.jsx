@@ -23,7 +23,7 @@ ter"
           className="flex cursor-pointer gap-2 justify-self-start px-5"
         >
           <input
-            className="cursor-pointer"
+            className="cursor-pointer accent-[#B83D1E]"
             type="radio"
             id={`${name}-${sem}`}
             name={name}

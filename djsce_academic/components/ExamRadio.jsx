@@ -14,7 +14,7 @@ const ExamRadio = ({ name, selectedOption, setSelectedOption }) => {
         {exams.map((exam) => (
           <div key={exam.value} className="flex cursor-pointer gap-2 justify-self-start px-6 py-1">
             <input
-              className="cursor-pointer"
+              className="cursor-pointer accent-[#B83D1E]"
               type="radio"
               id={`${name}-${exam.value}`}
               name={name}

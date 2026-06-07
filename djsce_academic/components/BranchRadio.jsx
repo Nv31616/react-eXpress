@@ -7,7 +7,7 @@ const BranchRadio = ({ name, selectedOption, setSelectedOption }) => {
       {branches.map((branch) => (
         <div key={branch} className="flex cursor-pointer gap-2 justify-self-start px-6">
           <input
-            className="cursor-pointer"
+            className="cursor-pointer accent-[#B83D1E]"
             type="radio"
             id={`${name}-${branch}`}
             name={name}

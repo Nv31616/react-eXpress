@@ -414,7 +414,7 @@ export default function UploadSection() {
           <select
             value={examType}
             onChange={(e) => setExamType(e.target.value)}
-            className="w-full p-2.5 bg-amber-100 border border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] focus:border-transparent transition-all cursor-pointer"
+            className="w-full p-2.5 bg-amber-100 border border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] transition-all cursor-pointer"
           >
             <option value="TT1">Term Test 1 (TT1)</option>
             <option value="TT2">Term Test 2 (TT2)</option>
@@ -431,7 +431,7 @@ export default function UploadSection() {
             type="file"
             onChange={handleFileChange}
             required
-            className="w-full p-2 bg-amber-100 border border-dashed border-[#B83D1E] rounded-xl font-mono text-xs sm:text-sm text-amber-900 file:mr-3 file:py-1 file:px-3 file:cursor-pointer file:rounded-full file:border-0 file:text-xs file:font-semibold file:border-[#B83D1E] file:bg-[#B83D1E] file:text-amber-50 hover:file:text-[#ff4444] hover:file:bg-[#1a0505] cursor-pointer file:transition-colors"
+            className="w-full p-2 bg-amber-100 border border-dashed border-[#B83D1E] rounded-xl font-mono text-sm file:text-sm text-amber-900 file:mr-3 file:py-1 file:px-3 file:cursor-pointer file:rounded-full file:border file:font-semibold file:border-[#B83D1E] file:bg-[#B83D1E] file:text-white hover:file:text-[#B83D1E] hover:file:bg-white cursor-pointer file:transition-colors"
           />
         </div>
 
