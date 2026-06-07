@@ -16,6 +16,7 @@ const Library = () => {
   const [books, setBooks] = useState([]);
   const rackRefs = useRef({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [found,setFound] = useState(true);
 
   useEffect(() => {
     if (highlightedId && rackRefs.current[highlightedId]) {
@@ -27,9 +28,29 @@ const Library = () => {
     }
   }, [highlightedId]);
 
+  const clearHighlight = () => {
+    setHighlightedId(null);
+  };
+
+  // BUG 1 FIX: Clear the "Show on Map" highlight automatically after 2 seconds
+  useEffect(() => {
+    if (!highlightedId) return;
+
+    const timer = setTimeout(() => {
+      // Trigger your state setter that clears the selected rack (sets it to null)
+      clearHighlight();
+      setFound(true);
+    }, 2000); // 2000ms = 2 seconds
+
+    // Cleanup: clears the timer if the user clicks another rack before 2 seconds finish
+    return () => clearTimeout(timer);
+  }, [highlightedId, clearHighlight]);
+
   return (
     <LibraryContext.Provider
       value={{
+        found,
+        setFound,
         highlightedId,
         setHighlightedId,
         books,
@@ -47,7 +68,7 @@ const Library = () => {
         {/* Fluid Viewport-Based Container Query Context Box */}
         <div className="w-[90vw] h-[137.22vw] sm:w-[100vw] sm:h-[91.482vw] lg:w-[895px] lg:h-[1364.6065px] [container-type:size] relative m-3 z-10">
           <div
-            className="absolute inset-0 border-2 border-amber-800 bg-[#c2b8ac]"
+            className="absolute inset-0 border-2 border-[#cc2222] bg-[#c2b8ac]"
             style={{
               display: "grid",
               paddingTop: "2.82cqh",

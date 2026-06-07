@@ -10,6 +10,7 @@ import SyllabusSubjects from "../components/SyllabusSubjects.jsx";
 import MarkMap from "../components/MarkMap.jsx";
 import UploadSection from "../components/UploadSection.jsx";
 import GlowWrapper from "../components/GlowWrapper.jsx";
+import Home from "../components/Home.jsx";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       <Navbar />
       {/* <GlowWrapper> */}
         <Routes>
-          <Route path="/" element={<Library />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/library" element={<Library />} />
           <Route path="/Papers" element={<Papers />} />
           <Route path="/Syllabus" element={<Syllabus />} />
           <Route path="/subjects" element={<ExamSubjects />} />

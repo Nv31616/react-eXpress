@@ -30,8 +30,8 @@ const MarkMap = () => {
   }, [markdown]);
 
   return (
-    <div className="w-full min-h-screen bg-amber-100 border border-amber-900 p-4 flex flex-col">
-      <p className="font-bold place-self-center text-2xl text-amber-900">
+    <div className="w-full min-h-screen bg-[#0f0f0f] border border-[#2a0a0a] p-4 flex flex-col">
+      <p className="font-bold place-self-center text-2xl text-[#e8e0d8]">
         {subject} — Mind Map
       </p>
 
@@ -39,19 +39,19 @@ const MarkMap = () => {
       <div className="flex place-content-end gap-3 mb-4">
         <button
           onClick={() => markmapRef.current?.fit()}
-          className="hover:scale-105 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-amber-700 rounded-3xl px-4 h-10 text-white"
+          className="hover:scale-105 bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-amber-700 rounded-3xl px-4 h-10 text-white"
         >
           Reset View
         </button>
         <button
           onClick={() => navigate(-1)}
-          className="hover:scale-105 bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl px-4 h-10 text-white"
+          className="hover:scale-105 bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-3xl px-4 h-10 text-white"
         >
           Back
         </button>
       </div>
 
-      <div className="rounded-2xl mx-4 h-screen overflow-hidden border border-amber-900">
+      <div className="rounded-2xl mx-4 h-screen overflow-hidden border border-[#2a0a0a]">
         <style>
         {`
           /* 1. Disable text selection to prevent cursor interference during panning */

@@ -12,9 +12,9 @@ const Papers = () => {
 
   return (
     <div className="flex justify-center pt-4">
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-10 border bg-amber-100 border-amber-900 rounded-2xl m-4">
+      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-10 border bg-[#0f0f0f] border-[#2a0a0a] rounded-2xl m-4">
         <div className="flex flex-col md:col-span-2 gap-3">
-          <p className="place-self-center font-bold text-3xl text-amber-900">
+          <p className="place-self-center font-bold text-3xl text-[#e8e0d8]">
             Select Papers
           </p>
           <ExamRadio
@@ -25,7 +25,7 @@ const Papers = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-3xl text-amber-900">
+          <p className="place-self-center font-bold text-3xl text-[#e8e0d8]">
             Select Semester
           </p>
           <SemRadio
@@ -35,7 +35,7 @@ const Papers = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <p className="place-self-center font-bold text-3xl text-amber-900">
+          <p className="place-self-center font-bold text-3xl text-[#e8e0d8]">
             Select Branch
           </p>
           <BranchRadio
@@ -46,7 +46,7 @@ const Papers = () => {
         </div>
 
         <button
-          className="hover:scale-105 md:col-span-2 max-w-sm place-self-center cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-10 text-white"
+          className="hover:scale-105 md:col-span-2 max-w-sm place-self-center cursor-pointer bg-[#aa1111] border-2 border-[#cc2222] font-mono hover:bg-[#1a0505] hover:text-[#ff4444] rounded-3xl w-full h-10 text-white"
           onClick={() => {
             navigate("/subjects", {
               state: {

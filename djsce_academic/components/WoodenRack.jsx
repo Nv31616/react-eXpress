@@ -7,14 +7,15 @@ const WoodenRack = forwardRef((props, ref) => {
   const number = props.number;
   const side = props.side;
   const id = props.id;
-  const { highlightedId, setBooks, setCurrentPage } =
+  const { highlightedId,found, setHighlightedId, setBooks, setCurrentPage,setFound } =
     useContext(LibraryContext);
   const highlight = id === highlightedId;
 
   return (
     <div
-      className={`${highlight ? "scale-105" : ""} hover:bg-none relative flex cursor-pointer bg-[#FEA630] hover:scale-105 items-center border-2 border-amber-800 justify-center`}
+      className={`${highlight ? "scale-105" : ""} md:hover:bg-none relative flex cursor-pointer bg-[#FEA630] md:hover:scale-105 items-center border-2 border-amber-800 justify-center`}
       onClick={async () => {
+        setHighlightedId(id);
         try {
           const { data, error } = await supabase
             .from("books")
@@ -22,9 +23,14 @@ const WoodenRack = forwardRef((props, ref) => {
             .eq("location_id", id);
 
           if (error) throw error;
-
-          setBooks(data || []);
-          setCurrentPage(1);
+          if (data.length === 0) {
+            setBooks([]);
+            setFound(false);
+          } else {
+            setFound(true);
+            setBooks(data);
+            setCurrentPage(1);
+          }
         } catch (error) {
           console.error("Search failed:", error);
         }
@@ -34,7 +40,7 @@ const WoodenRack = forwardRef((props, ref) => {
       <img
         ref={ref}
         src="../src/assets/wooden.png"
-        className={`${highlight ? "opacity-0" : ""} hover:opacity-0 h-[2.47cqh] w-full`}
+        className={`${highlight ? "opacity-0" : ""} md:hover:opacity-0 h-[2.47cqh] w-full`}
       />
     </div>
   );

@@ -10,7 +10,7 @@ const ExamRadio = ({ name, selectedOption, setSelectedOption }) => {
   ];
 
   return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 w-full text-amber-800 text-xl font-mono font-bold place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 w-full text-[#c8c0b8] text-xl font-mono font-bold place-items-center">
         {exams.map((exam) => (
           <div key={exam.value} className="flex cursor-pointer gap-2 justify-self-start px-6 py-1">
             <input
