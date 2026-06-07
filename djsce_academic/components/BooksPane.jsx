@@ -75,7 +75,7 @@ const BooksPane = () => {
 
       {isLoading ? (
         <div className="flex flex-1 mt-10 justify-center">
-          <LoaderCircle className="animate-spin" size={48} color="#cc2222" />
+          <LoaderCircle className="animate-spin" size={48} color="#B83D1E" />
         </div>
       ) : (
         <>

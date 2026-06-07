@@ -341,8 +341,6 @@ export default function UploadSection() {
     setMessage({ text: "Uploading file", type: "info" });
 
     try {
-      // 🌟 SAFE REGEX CLEANING: Converts special symbols like spaces, dashes, commas, dots to clean underscores
-      // e.g., "Maths-II" -> "Maths_II", "Engg. Graphics" -> "Engg__Graphics"
       const cleanSubject = subject.trim().replace(/[\s\.\,\-]+/g, "_");
 
       const customFileName = `${cleanSubject}_${examType}_${academicYear}.pdf`;
@@ -393,7 +391,7 @@ export default function UploadSection() {
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             required
-            className="w-full p-2.5 bg-amber-100 border border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] focus:border-transparent transition-all cursor-pointer"
+            className="w-full p-2.5 bg-amber-100 border  border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] focus:border-transparent transition-all cursor-pointer"
           >
             <option value="" disabled>
               -- Choose a Subject --
