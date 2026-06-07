@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 // Initialize your Supabase client
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -373,86 +375,86 @@ export default function UploadSection() {
 
   return (
     <div className="flex justify-center">
-    <div className="p-5 sm:p-8 flex flex-col gap-6 border max-w-150 bg-amber-100 border-amber-900 rounded-2xl m-3">
-      <h2 className="font-bold text-2xl sm:text-3xl text-amber-900 text-center">
-        Upload Previous Year Papers
-      </h2>
+      <div className="p-5 sm:p-8 flex flex-col gap-6 border max-w-150 bg-amber-100 border-amber-900 rounded-2xl m-3">
+        <h2 className="font-bold text-2xl sm:text-3xl text-amber-900 text-center">
+          Upload Previous Year Papers
+        </h2>
 
-      <form onSubmit={handleUpload} className="flex flex-col gap-4 w-full">
-        {/* Subject Select Dropdown Group */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
-            Select Subject
-          </label>
-          <select
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            required
-            className="w-full p-2.5 bg-amber-100 border  border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] focus:border-transparent transition-all cursor-pointer"
-          >
-            <option value="" disabled>
-              -- Choose a Subject --
-            </option>
-            {AVAILABLE_SUBJECTS.map((sub, idx) => (
-              <option key={idx} value={sub}>
-                {sub}
+        <form onSubmit={handleUpload} className="flex flex-col gap-4 w-full">
+          {/* Subject Select Dropdown Group */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
+              Select Subject
+            </label>
+            <select
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
+              className="w-full p-2.5 bg-amber-100 border  border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] focus:border-transparent transition-all cursor-pointer"
+            >
+              <option value="" disabled>
+                -- Choose a Subject --
               </option>
-            ))}
-          </select>
-        </div>
+              {AVAILABLE_SUBJECTS.map((sub, idx) => (
+                <option key={idx} value={sub}>
+                  {sub}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {/* Papers Type Group */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
-            Exam Type
-          </label>
-          <select
-            value={examType}
-            onChange={(e) => setExamType(e.target.value)}
-            className="w-full p-2.5 bg-amber-100 border border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] transition-all cursor-pointer"
+          {/* Papers Type Group */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
+              Exam Type
+            </label>
+            <select
+              value={examType}
+              onChange={(e) => setExamType(e.target.value)}
+              className="w-full p-2.5 bg-amber-100 border border-amber-800 rounded-xl font-mono text-sm sm:text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-[#B83D1E] transition-all cursor-pointer"
+            >
+              <option value="TT1">Term Test 1 (TT1)</option>
+              <option value="TT2">Term Test 2 (TT2)</option>
+              <option value="ESE">End Semester Examination (ESE)</option>
+            </select>
+          </div>
+
+          {/* File Picker Selection Group */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
+              Choose File
+            </label>
+            <input
+              type="file"
+              onChange={handleFileChange}
+              required
+              className="w-full p-2 bg-amber-100 border border-dashed border-[#B83D1E] rounded-xl font-mono text-sm file:text-sm text-amber-900 file:mr-3 file:py-1 file:px-3 file:cursor-pointer file:rounded-full file:border file:font-semibold file:border-[#B83D1E] file:bg-[#B83D1E] file:text-white hover:file:text-[#B83D1E] hover:file:bg-white cursor-pointer file:transition-colors"
+            />
+          </div>
+
+          {/* Optimized Action Submit Button */}
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-2 self-center max-w-xs hover:scale-[1.02] active:scale-[0.98] transition-transform cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-11 text-white text-sm sm:text-base font-bold disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2"
           >
-            <option value="TT1">Term Test 1 (TT1)</option>
-            <option value="TT2">Term Test 2 (TT2)</option>
-            <option value="ESE">End Semester Examination (ESE)</option>
-          </select>
-        </div>
+            {loading ? (
+              <span className="animate-pulse">Uploading File...</span>
+            ) : (
+              "Upload"
+            )}
+          </button>
+        </form>
 
-        {/* File Picker Selection Group */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs sm:text-sm font-bold font-mono text-amber-900 uppercase tracking-wider">
-            Choose File
-          </label>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            required
-            className="w-full p-2 bg-amber-100 border border-dashed border-[#B83D1E] rounded-xl font-mono text-sm file:text-sm text-amber-900 file:mr-3 file:py-1 file:px-3 file:cursor-pointer file:rounded-full file:border file:font-semibold file:border-[#B83D1E] file:bg-[#B83D1E] file:text-white hover:file:text-[#B83D1E] hover:file:bg-white cursor-pointer file:transition-colors"
-          />
-        </div>
-
-        {/* Optimized Action Submit Button */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="mt-2 self-center max-w-xs hover:scale-[1.02] active:scale-[0.98] transition-transform cursor-pointer bg-[#B83D1E] border-2 border-[#B83D1E] font-mono hover:bg-white hover:text-[#B83D1E] rounded-3xl w-full h-11 text-white text-sm sm:text-base font-bold disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2"
-        >
-          {loading ? (
-            <span className="animate-pulse">Uploading File...</span>
-          ) : (
-            "Upload"
-          )}
-        </button>
-      </form>
-
-      {/* Styled Responsive Feedback Notifications */}
-      {message && (
-        <div
-          className={`p-3.5 rounded-xl font-mono text-xs sm:text-sm text-center text-amber-900 bg-amber-100`}
-        >
-          {message.text}
-        </div>
-      )}
-    </div>
+        {/* Styled Responsive Feedback Notifications */}
+        {message && (
+          <div
+            className={`p-3.5 rounded-xl font-mono text-xs sm:text-sm text-center text-amber-900 bg-amber-100`}
+          >
+            {message.text}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
